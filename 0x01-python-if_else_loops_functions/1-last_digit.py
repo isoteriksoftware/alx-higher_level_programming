@@ -2,8 +2,10 @@
 import random
 number = random.randint(-10000, 10000)
 last_digit = int(str(number)[-1])
-print("Last digit of", number, "is",
-      f"{'-' if number < 0 else ''}{last_digit}",
+if number < 0:
+    last_digit *= -1
+
+print("Last digit of", number, "is", last_digit,
       "and is 0" if last_digit == 0
       else "and is greater than 5"
       if last_digit > 5 else "and is less than 6 and not 0")
